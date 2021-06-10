@@ -1,0 +1,20 @@
+package stepdefention;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+
+
+import browserlaunch.Baseclass;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import page.loginpage;
+
+public class Stepdefen extends Baseclass {
+	loginpage login;
+
+	
+	}
+
+}
+}

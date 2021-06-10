@@ -1,0 +1,25 @@
+package seleniumtest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Seleniumtest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\eclipse-workspace\\sunday project\\Drivers\\chromedriver.exe");
+System.setProperty("webdriver.geckodriver.driver", "C:\\Users\\admin\\eclipse-workspace\\sunday project\\Drivers\\geckodriver.exe");
+WebDriver driver =new FirefoxDriver();
+WebDriver drivers = new ChromeDriver();
+driver.get("http://www.leafground.com/");
+
+
+
+		
+		
+		
+		
+	}
+
+}

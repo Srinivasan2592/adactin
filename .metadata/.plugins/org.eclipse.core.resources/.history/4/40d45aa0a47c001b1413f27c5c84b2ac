@@ -1,0 +1,58 @@
+package seleniumchecking;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Fulltestchecking {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter brower Name:");
+		String browser = sc.nextLine();
+		WebDriver driver = null;
+		if(browser.equals("Firefox"))
+		{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\admin\\eclipse-workspace\\seleniumchecking\\Driver\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		}
+		else
+		if(browser.equals("Chrome"))
+		{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\eclipse-workspace\\seleniumchecking\\Driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		}
+		else
+		{
+		System.out.println("Invalid browser");
+		}
+	
+		driver.get("https://demoqa.com/automation-practice-form/");
+		
+		String title = driver.getTitle();
+		System.out.println("And Your page title is :"+title);
+		
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println("your current url is :"+currentUrl);
+		
+		//windows maximized
+		driver.manage().window().maximize();
+		//windows deleting all cookies
+		driver.manage().deleteAllCookies();
+		
+		
+		/// getting site input information 
+		WebElement txtsearch = driver.findElement(By.name("q"));	
+		txtsearch.sendKeys("greens velmurugan");
+		String searchvalue = txtsearch.getAttribute("value");
+		System.out.println("Your search value is :"+searchvalue);
+		txtsearch.sendKeys(Keys.ENTER);
+		
+	}
+
+}

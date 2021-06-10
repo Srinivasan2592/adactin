@@ -1,0 +1,34 @@
+Feature: verification Adatin hoten login details
+
+  Scenario: verifying login details and validation credentials
+    Given user is on adatin hotel page
+    When user enter "<username>"and "<password>"
+    |Rbnbalan|9043927392|
+    And user should click login button
+    Then logout text is displayed found sucessmessage is displayed
+    Then user filling forms in Search Hotel "<Location>","<Hotels>","<Room Type>","<Number of Rooms>","<Check In Date>","<Check Out Date>","<Adults per Room>"and"<Children per Room>"   
+    
+    Scenario: verifying text box Search Hotel
+    Given user is on Search Hotel
+    And user filling forms in Search Hotel "<Location>","<Hotels>","<Room Type>","<Number of Rooms>","<Check In Date>","<Check Out Date>","<Adults per Room>"and"<Children per Room>" 
+    |Sydney|Hotel Sunshine|Standard|3 - Three|25/04/2021|29/04/2021|3 - Three|3 - Three|
+    Then user should click Reset button
+    
+    And Again user filling forms in Search Hotel "<Location>","<Hotels>","<Room Type>","<Number of Rooms>","<Check In Date>","<Check Out Date>","<Adults per Room>"and"<Children per Room>" 
+    |Sydney|Hotel Sunshine|Standard|3 - Three|25/04/2021|29/04/2021|3 - Three|3 - Three|
+    Then user should click Search button
+   
+   
+   Scenario: user want to Select Hotel
+   Given user want to click check click box 
+   And 
+    
+    
+    
+    
+    
+    
+    
+    |username|password||Location|Hotels|Room Type|Number of Rooms|Check In Date|Check Out Date|Adults per Room|Children per Room|
+    |Rbnbalan|9043927392
+    

@@ -1,0 +1,46 @@
+package browserlaunch;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Baseclass {
+	public static WebDriver driver;
+	public static void getdriver() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		
+		String Title = driver.getTitle();
+		System.out.println("Page Title is : " + Title);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		
+
+		public static void launchurl(String data) {
+			driver.get(data);
+		}
+
+		public static void entertext(WebElement element, String text) {
+			element.sendKeys(text);
+
+		}
+
+		public static void buttonclick(WebElement element) {
+
+			element.click();
+
+		}
+
+		public static void selectById(WebElement element, int index) {
+			Select s = new Select(element);
+			s.selectByIndex(index);
+
+		}
+		
+		
+	}
+}

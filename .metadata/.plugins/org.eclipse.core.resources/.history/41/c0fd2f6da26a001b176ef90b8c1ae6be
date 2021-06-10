@@ -1,0 +1,23 @@
+package dayfour;
+
+import java.util.Scanner;
+
+public class Hello {
+	  public static void main(String[] args) {
+		  Scanner EM =new Scanner(System.in);
+		  System.out.println("Enter THE VOTER AGE :");
+			int Tamil = EM.nextInt();
+		 // for (int i = 1; i<=18;i++)
+		// {
+			  int j = 18;
+			if (j == Tamil) {
+			        //continue;
+			      
+			      System.out.println("he can vote ");
+			  }
+			  else {
+				  System.out.println("he cannot vote");
+			  }
+	}
+}
+//}

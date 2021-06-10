@@ -1,0 +1,37 @@
+package stepdefenition;
+
+import Baseclass.Baseclass;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import packages.Loginpage;
+
+public class stepdef extends Baseclass {  
+	Loginpage login;
+
+
+	@Given("user is in login page validating url")
+	public void user_is_in_login_page_validating_url() {
+		getdriver();
+		launchurl("https://adactinhotelapp.com/index.php");
+		
+	}
+
+	@Given("user entering username {string} and password {string}")
+	public void user_entering_username_and_password(String string, String string2) {
+	   
+	}
+
+	@Given("user clicking login button")
+	public void user_clicking_login_button() {
+	    
+	}
+
+	@Then("Verfiy user enter login into Adatn Hotel Page.")
+	public void verfiy_user_enter_login_into_Adatn_Hotel_Page() {
+	    
+	}
+
+
+	
+
+}

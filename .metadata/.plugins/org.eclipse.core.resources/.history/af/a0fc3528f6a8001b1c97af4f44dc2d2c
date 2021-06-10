@@ -1,0 +1,49 @@
+package stepdefention;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import browserlaunch.Baseclass;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import page.loginpage;
+
+public class Stepdefen extends Baseclass { 
+	loginpage login;
+
+	@Given("user is on adatin hotel page")
+	public void user_is_on_adatin_hotel_page() {
+		getdriver();
+		launchurl("https://adactinhotelapp.com/index.php");
+	}
+
+	@When("user enter username {string} and password {string}")
+	public void user_enter_username_and_password(String Username, String password) {
+		entertext(login.getUsername(), Username);
+		entertext(login.getPassword(), password);
+	}
+
+	@When("user should click login button")
+	public void user_should_click_login_button() {
+		buttonclick(login.getLoginbtn());
+
+	}
+
+	@Then("logout text is displayed found, Sucessfullymessage is displayed")
+	public void logout_text_is_displayed_found_Sucessfullymessage_is_displayed() {
+		WebElement Actualvalue = driver.findElement(By.id("username_show"));
+		String Existing_value = "Hello Rbnbalan!";
+		if (Actualvalue.equals(Existing_value)) {
+			Assert.assertTrue(true);
+			System.out.println("User logined sucessfully");
+
+		} else {
+			System.out.println("Invlaid User ");
+
+		}
+
+	}
+
+}

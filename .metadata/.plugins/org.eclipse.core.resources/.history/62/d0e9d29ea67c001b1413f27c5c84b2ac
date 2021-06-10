@@ -1,0 +1,89 @@
+package seleniumchecking;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Fulltestchecking {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter brower Name:");
+		String browser = sc.nextLine();
+		WebDriver driver = null;
+		if(browser.equals("Firefox"))
+		{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\admin\\eclipse-workspace\\seleniumchecking\\Driver\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		}
+		else
+		if(browser.equals("Chrome"))
+		{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\eclipse-workspace\\seleniumchecking\\Driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		}
+		else
+		{
+		System.out.println("Invalid browser");
+		}
+	
+		driver.get("https://demoqa.com/automation-practice-form/");
+		
+		String title = driver.getTitle();
+		System.out.println("And Your page title is :"+title);
+		
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println("your current url is :"+currentUrl);
+		
+		//windows maximized
+		driver.manage().window().maximize();
+		//windows deleting all cookies
+		driver.manage().deleteAllCookies();
+		
+		
+		/// getting site input information 
+		WebElement txtfirstName = driver.findElement(By.id("firstName"));	
+		txtfirstName.sendKeys("murugan");
+		String searchvaluefirstName = txtfirstName.getAttribute("value");
+		System.out.println("Your search value is :"+searchvaluefirstName);
+		//txtsearch.sendKeys(Keys.ENTER);
+		
+		WebElement txtlastName = driver.findElement(By.id("lastName"));	
+		txtlastName.sendKeys("Eswaran");
+		String searchvaluelastName = txtlastName.getAttribute("value");
+		System.out.println("Your search value is :"+searchvaluelastName);
+		
+		
+		WebElement txtuserEmail = driver.findElement(By.id("userEmail"));	
+		txtuserEmail.sendKeys("murugan@gmail.com");
+		String searchvalueuserEmail = txtlastName.getAttribute("value");
+		System.out.println("Your search value is :"+searchvalueuserEmail);
+		
+		WebElement txtgender = driver.findElement(By.xpath("//*[@id=\"genterWrapper\"]/div[2]/div[1]/label"));	
+		txtgender.click();
+		String searchvaluegender = txtgender.getAttribute("value");
+		System.out.println("Your search value is :"+searchvaluegender);
+		
+		
+		WebElement txtuserNumber = driver.findElement(By.id("userNumber"));	
+		txtuserNumber.sendKeys("8877996699");
+		String searchvalueuserNumber = txtuserNumber.getAttribute("value");
+		System.out.println("Your search value is :"+searchvalueuserNumber);
+		
+		
+		WebElement txtuserdateOfBirthInput = driver.findElement(By.id("dateOfBirthInput"));	
+		txtuserdateOfBirthInput.clear();
+		//txtuserdateOfBirthInput.sendKeys("23 Jun 2021");
+		//txtuserdateOfBirthInput.click();
+		//String searchvalueuserdateOfBirthInput = txtuserdateOfBirthInput.getAttribute("value");
+		//System.out.println("Your search value is :"+searchvalueuserdateOfBirthInput);
+		
+		
+	}
+
+}

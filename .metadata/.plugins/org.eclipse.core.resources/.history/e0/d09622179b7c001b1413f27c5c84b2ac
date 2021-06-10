@@ -1,0 +1,10 @@
+package seleniumchecking;
+
+public class Fulltestchecking {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

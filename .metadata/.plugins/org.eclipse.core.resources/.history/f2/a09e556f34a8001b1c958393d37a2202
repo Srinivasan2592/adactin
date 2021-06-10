@@ -1,0 +1,40 @@
+Feature: verification Adatin hoten login details
+
+  @loginPgePge
+  Scenario: verifying login details and validation credentials
+    Given user is on adatin hotel page
+    When user enter "<username>","<password>"
+      | username | password   |
+      | Rbnbalan | 9043927392 |
+    And user should click login button
+    Then logout text is displayed found, Sucessmessage is displayed
+
+  @Search_hotel_Pge
+  Scenario: verifying text box Search Hotel
+    Given user is on Search Hotel
+    And user filling forms in Search Hotel "<Location>","<Hotels>","<Room Type>","<Number of Rooms>","<Check In Date>","<Check Out Date>","<Adults per Room>"and"<Children per Room>"
+      | Sydney | Hotel Sunshine | Standard | 3 - Three | 25/04/2021 | 29/04/2021 | 3 - Three | 3 - Three |
+    Then user should click Reset button
+    And Again user filling forms in Search Hotel "<Location>","<Hotels>","<Room Type>","<Number of Rooms>","<Check In Date>","<Check Out Date>","<Adults per Room>"and"<Children per Room>"
+      | Sydney | Hotel Sunshine | Standard | 3 - Three | 25/04/2021 | 29/04/2021 | 3 - Three | 3 - Three |
+    Then user should click Search button
+
+  @Select_Hotel_Pge
+  Scenario: user is in  Select Hotel Page
+    Given user want to click check box
+    And user want to click continue button
+    Then user sucessfully Navigate into Book A Hotel
+
+  @Select_Book_A_Hotel_Pge
+  Scenario: user is in Select Book A Hotel
+    Given user  Enter "<Firstname>","<LastName>","<Billingaddress>","<Creditcardno>","<CreditCardType>","<CardExpiryMonth>","<CardExpiryyear>","<CVV>"
+      | srini            |
+      | vasan            |
+      | Madurai          |
+      | 1234567891234567 |
+      | VISA             |
+      | February         |
+      |             2022 |
+      |             7890 |
+    And User to click Book btn
+    Then User successfully booked Rooms

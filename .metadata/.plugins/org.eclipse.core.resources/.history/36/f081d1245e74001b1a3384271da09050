@@ -1,0 +1,26 @@
+package seleniumchecking;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Dropdown   {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				     "C:\\\\Users\\\\admin\\\\eclipse-workspace\\\\seleniumchecking\\\\Driver\\\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://www.leafground.com/pages/Dropdown.html");
+		driver.manage().window().maximize();
+		
+		WebElement selectdrop = driver.findElement(By.id("dropdown1"));
+	    Select select =new Select(selectdrop);
+	    select.selectByIndex(1);
+	    
+
+
+	}
+	
+}

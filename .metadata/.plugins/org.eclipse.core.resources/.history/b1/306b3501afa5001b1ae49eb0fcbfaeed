@@ -1,0 +1,11 @@
+Feature: verification Adatin hoten login details
+
+  Scenario Outline: verifying login details and validation credentials
+    Given user is on adatin hotel page
+    When user enter "<username>" and "<password>"
+    And user should click login button
+    Then logout text is displayed found sucessmessage is displayed
+
+   Examples:
+   |Username|Password|
+   |Rbnbala|9043927392|

@@ -1,0 +1,15 @@
+package seleniumtest;
+
+public class Seleniumtest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver","C:\Users\\admin\\eclipse-workspace\\sunday project\\Drivers\\chromedriver.exe");
+
+		
+		
+		
+		
+	}
+
+}

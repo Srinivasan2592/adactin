@@ -1,0 +1,16 @@
+package page;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class loginpage {
+	
+	@FindBy(id = "username")
+	private WebElement username;
+	@FindBy(id = "password")
+	private WebElement password;
+	@FindBy(id = "login")
+	private WebElement login;
+	
+
+}

@@ -1,0 +1,42 @@
+package seleniumtest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Seleniumtest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\admin\\eclipse-workspace\\selenium8ambatch\\Driver\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();
+driver.get("http://www.leafground.com/");
+
+//to maximized window
+driver.manage().window().maximize();
+
+String txtclickedit = driver.getCurrentUrl();
+System.out.println(txtclickedit); 
+//txtclickedit.sendKeys("ala@gmail.com");
+
+
+
+
+// for Firefox
+System.setProperty("webdriver.gecko.driver","C:\\Users\\admin\\eclipse-workspace\\sunday project\\Drivers\\geckodriver.exe");
+WebDriver drivers =new FirefoxDriver();
+drivers.get("http://www.leafground.com/");
+WebElement txtEmailbox = (WebElement) drivers.findElements(By.xpath("//[@id=\'post-153\']/div[2]/div/ul/li[1]/a"));
+txtEmailbox.sendKeys("ala@gmail.com");
+txtEmailbox.click();
+
+
+	
+		
+		
+		
+	}
+
+}

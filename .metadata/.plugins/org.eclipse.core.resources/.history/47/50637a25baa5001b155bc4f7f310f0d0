@@ -1,0 +1,40 @@
+package stepdefention;
+
+import java.util.concurrent.TimeUnit;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import browserlaunch.Baseclass;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import page.loginpage;
+
+public class Stepdefen extends Baseclass {
+	loginpage login;
+	
+	@Given("user is on adatin hotel page")
+	public void user_is_on_adatin_hotel_page() {
+		getdriver();
+		launchurl("https://adactinhotelapp.com/index.php");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+	@When("user enter usernameand password")
+	public void user_enter_usernameand_password() {
+		login=new loginpage();
+		login.getUsername().sendKeys("Rbnbalan");;
+		login.getPassword().sendKeys("9043927392");	
+	}
+
+	@When("user should click login button")
+	public void user_should_click_login_button() {
+		login.getLoginbtn().click();
+	}
+
+	@Then("logout text is displayed found sucessmessage is displayed")
+	public void logout_text_is_displayed_found_sucessmessage_is_displayed() {
+		Assert.assertTrue(true);
+
+	}
+
+}
